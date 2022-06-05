@@ -1,0 +1,35 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+<div class="container">
+    <style>
+        .detail{
+            padding-top: 12%;
+        }
+    </style>
+    <div class="row detail">
+        <div class="col-md-6">
+            <div>
+                <img src="{{ product.image.url }}" width="500px" height="500px" alt="">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="text-warning display-3">
+                {{ product.title }}
+            </div>
+            <div class="text-danger " style="padding: 5%;">
+               Prix:  $ {{ product.price }}
+            </div>
+            <div style="padding: 5%;">
+                {{ product.description }}
+            </div>
+            <div style="padding: 5%;">
+                <a href="{% url 'checkout' %}"><button class="btn btn-primary" >Acheter</button></a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}
