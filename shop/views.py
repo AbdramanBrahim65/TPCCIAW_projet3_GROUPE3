@@ -8,7 +8,7 @@ def index(request):
     item_name = request.GET.get('item-name')
     if item_name !='' and item_name is not None:
         product_object = Product.objects.filter(title__icontains=item_name)
-    paginator = Paginator(product_object, 4)
+    paginator = Paginator(product_object, 6)
     page = request.GET.get('page')
     product_object = paginator.get_page(page)
     context = {
